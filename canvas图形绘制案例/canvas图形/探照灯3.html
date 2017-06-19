@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #cccccc;
+            padding-top: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="400" height="400"></canvas>
+<script>
+    var canvas = document.querySelector('#canvas');
+
+    // 取得canvas 2D绘图环境（上下文）
+    var context = canvas.getContext('2d');
+
+    var image = new Image();
+    image.onload = function(){
+        //绘制探照灯
+        draw(canvas.width / 2, canvas.height / 2);
+    };
+    image.src = 'image/1.gif';
+
+
+    function draw (x, y) {
+
+        //防止下次修改了fillStyle的值
+        context.fillStyle = 'black';
+        context.fillRect(0, 0, canvas.width, canvas.height);
+
+
+        //圆
+        context.beginPath();
+        context.arc(x, y, 50, 0, Math.PI * 2, true);
+        context.closePath();
+
+        context.fillStyle = 'white';
+        //填充图
+        context.fill();
+
+
+        //保存当前绘图环境
+        context.save();
+
+        //裁切（类似PS的剪切蒙板）
+        //注意：clip会改变canvas的绘图环境
+        context.clip();
+
+
+        //字体
+//        context.fillStyle = 'black';
+//        context.font = '20px 微软雅黑';
+//        //水平对齐方式
+//        context.textAlign = 'center';
+//        //垂直对齐方式
+//        context.textBaseline = 'middle';
+//        //写入文字到canvas中心点
+//        context.fillText('你好，Canvas！', canvas.width / 2, canvas.height / 2);
+
+
+        //画图
+        context.drawImage(image, 0, 0, canvas.width, canvas.height);                                                                                                                                                                                                                                                kn
+
+
+
+        //恢复上次绘图环境
+        context.restore();
+    }
+
+    //canvas动画原理：清除画布，再画，再清除，再画，如此反复下去
+    canvas.addEventListener('mousemove', function(event) {
+        //鼠标在canvas里的偏移量
+        var offsetX = event.offsetX;
+        var offsetY = event.offsetY;
+
+        //清除画布
+        context.clearRect(0, 0, canvas.width, canvas.height);
+
+        //再画
+        draw(offsetX, offsetY);
+
+    }, false)
+</script>
+</body>
+</html>

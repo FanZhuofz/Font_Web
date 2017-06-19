@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JavaScript字符串对象</title>
+</head>
+<body>
+<h2>JavaScript字符串对象</h2><hr>
+<script type="text/javascript">
+	var s1="实例化字符串方式一";
+	var s2=new String("实例化字符串abc方式二");
+	document.write(s1+"<br/>");
+	document.write(s2+"<br/>");
+	document.write(s2+" 的长度是："+s2.length+" <br/>");
+	//在s2串中从0开始查看abc在第几位
+	document.write("abc在第 "+s2.indexOf("abc",0)+" 位。<br/>");
+	//将s2中的abc字符串替换为dawnfan
+	document.write(s2.replace("abc","dawnfan")+"<br/>");
+</script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>设置表格的边框</title>
+	<style type="text/css">
+	.t {
+		border: 1px gray solid;
+		border-spacing: 0px; 	/*设置单元格之间间距*/
+		border-collapse: collapse;/*默认separate分离  collapse合并*/ 
+		/*设置表格宽度  
+			Table-layout 默认auto 自动方式，根据单元格的内容自动调整宽度
+			Fixed固定方式  表格宽度固定
+		*/
+		width: 500px;
+		table-layout: fixed; /*固定宽度*/
+	}
+
+	.t td {
+		border: 1px gray solid;
+		padding: 5px;
+	}
+
+	.t th {
+		border: 1px gray solid;
+		padding: 5px;
+	}
+
+	/*设置表格背景颜色*/
+	.t tr {
+		background-color: #CCC;
+	}
+
+	/*设置表格隔行换色*/
+	tbody tr.even {
+		background-color: #AAA;
+	}
+
+	/*临界选择器*/
+	/*学号列*/
+	th+td {
+		text-align: center;
+	}
+	/*姓名列*/
+	th+td+td {
+		text-align: center;
+	}
+	/*性别列*/
+	th+td+td+td {
+		text-align: center;
+	}
+	/*出生日期列*/
+	th+td+td+td+td {
+		text-align: center;
+	}
+
+	/*设置列表的符号*/
+	ul,ol {
+		margin-left: 20px;
+		/* list-style-type: square;	/*设置为实心方形*/
+		list-style-image: url("li1.png");
+	}
+	</style>
+</head>
+<body>
+	<table class="t">
+		<caption>统计表</caption>
+		<thead>
+			<tr>
+				<th style="width: 50px;">序号</th>
+				<th>学号</th>
+				<th>姓名</th>
+				<th style="width: 50px;">性别</th>
+				<th>出生日期</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>01</th>
+				<td>B14060405</td>
+				<td>范卓1111111111111111111111111111111111111111111111</td>
+				<td>男</td>
+				<td>2月11日</td>
+			</tr>
+			<tr class="even">
+				<th>02</th>
+				<td>B14060401</td>
+				<td>陈浩</td>
+				<td>男</td>
+				<td>10月11日</td>
+			</tr>
+			<tr>
+				<th>03</th>
+				<td>B14060421</td>
+				<td>王怿</td>
+				<td>男</td>
+				<td>6月11日</td>
+			</tr>
+			<tr class="even">
+				<th>04</th>
+				<td>B14060406</td>
+				<td>耿亚超</td>
+				<td>男</td>
+				<td>2月21日</td>
+			</tr>
+			<tr>
+				<th>05</th>
+				<td>B14060415</td>
+				<td>鲁迪</td>
+				<td>男</td>
+				<td>8月21日</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th>总计</th>
+				<th colspan="4">5条数据</th>
+			</tr>
+		</tfoot>
+	</table>
+	<hr>
+	<p>
+		链接的四种状态：
+		a:link：普通的、未被访问的链接；
+		a:visited：用户已访问的链接；
+		a:hover：鼠标指针位于链接的上方；
+		a:active：链接被点击的时刻
+	</p>
+	<hr>
+
+	<h1>设置列表的符号</h1>
+	<ul>
+		<li>主页</li>
+		<li>我的博客</li>
+		<li style="list-style-image: url('li2.png');">我的相册</li>
+		<li>留言</li>
+		<li style="list-style-image: url('li2.png');">关于我</li>
+	</ul>
+
+	<ol>
+		<li style="list-style-image: url('li2.png');">主页</li>
+		<li>我的博客</li>
+		<!-- <li style="list-style-type: circle;">我的博客</li>	<!--符号改为空心圆-->
+		<li>我的相册</li>
+		<li>留言</li>
+		<li>关于我</li>
+		<!-- <li style="list-style-type: none;">关于我</li>	<!--去掉符号-->
+	</ol>
+	<hr>
+	<br/><br/>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JavaScript全局函数</title>
+	<style type="text/css">
+	.tab {
+		width: 500px;
+		padding: 10px;
+		border: 1px solid red;
+	}
+	</style>
+	<script type="text/javascript">
+		/*
+		window.onload()=function(){
+			alert("文档加载完毕了！");
+		}
+		*/
+
+		function init(){
+			alert("文档加载完毕了!");
+		}
+
+		window.onresize=function(){
+			alert("窗体大小发生了变化！");
+		}
+	</script>
+</head>
+<body>
+	<div class="tab">
+		<p>
+			全局函数不属于任何一个内置对象<br/>
+			js包含以下7个全局函数，用于一些常用的功能：<br/>
+			escape(),eval(),isNan(),isFinite(),parseFloat(),parseInt(),unescape();<br/>
+			eval()方法：执行代码。
+		</p>
+		<p>
+			Alert();弹出消息框		confirm()	prompt()<br/>
+			setTimeout(); 执行一次<br/>
+			setinterval(); 执行多次<br/>
+			open(); 打开窗口<br/>
+			<br/>
+			Window.onload  发生在文档全部下载完毕的时候<br/>
+			Window.onresize  发生在窗口大小发生变化的时候<br/>
+		</p>
+	</div>
+	<br/>
+	<hr>
+	<script type="text/javascript">
+		// eval()  执行代码的全局函数
+		/*
+		str="1+2+3";
+		alert(eval(str));
+		*/
+		window.alert("window对象的alert方法！");
+
+		function fzt() {
+			alert("3秒后执行！");
+		}
+
+		function setDateTime() {
+			var date=new Date();
+			var day=date.getDay();
+			var week;
+			switch(day){
+				case 0: week="星期日";break;
+				case 1: week="星期一";break;
+				case 2: week="星期二";break;
+				case 3: week="星期三";break;
+				case 4: week="星期四";break;
+				case 5: week="星期五";break;
+				case 6: week="星期六";break;
+			}
+			var today=date.getFullYear()+"年"+(date.getMonth()+1)+"月"+date.getDate()+"日"+" "+week+" "+date.getHours()+":"+date.getMinutes()+":"+date.getSeconds()+" ";
+			document.getElementById("today").innerHTML=today;
+		}
+
+		//设置**秒后执行
+		window.setTimeout("fzt()",3000);
+		window.setInterval("setDateTime()",1000);
+		window.open("http://127.0.0.1/BusSystem/");
+	</script>
+	<div id="today"></div>
+</body>
+</html>

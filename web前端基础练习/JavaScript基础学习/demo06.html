@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JavaScript日期对象</title>
+	<style type="text/css">
+		.bor {
+			width: 500px;
+			border: 1px solid red;
+		}
+		span {
+			font-size: 10px;
+			font-weight: bold;
+			color: red;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<pre>
+		<div class="bor">
+			<span>日期、时间</span>
+			<hr>
+			1、日期对象实例化
+			2、getTime()方法，返回1970年1月1日至今的毫秒数
+			3、getFullYear() 从Date对象以四位数字返回年份
+			4、getMonth() 从Date对象返回月份(0 ~ 11)
+			5、getDate() 从Date对象返回一个月中的某一天(1 ~ 31)
+			6、getHours() 返回Date对象的小时(0 ~ 23)
+			7、getMinutes() 返回Date对象的分钟(0 ~ 59)
+			8、getSeconds() 返回Date对象的秒数(0 ~ 59)
+			9、getDay 从Date对象返回一周中的某一天(0 ~ 6)
+		</div>
+	</pre>
+	<hr>
+	<script type="text/javascript">
+		var date=new Date();
+		document.write("毫秒："+date.getTime()+"<br/>");
+		document.write("年："+date.getFullYear()+"<br/>");
+		document.write("月："+(date.getMonth()+1)+"<br/>");
+		document.write("日："+date.getDate()+"<br/>");
+		var today=date.getFullYear()+"年"+(date.getMonth()+1)+"月"+date.getDate()+"日";
+		document.write("现在日期："+today+"<br/>");
+
+		document.write("<hr>");	//分隔
+
+		document.write("时："+date.getHours()+"<br/>");
+		document.write("分："+date.getMinutes()+"<br/>");
+		document.write("秒："+(date.getSeconds()+1)+"<br/>");
+		var today=date.getFullYear()+"年"+(date.getMonth()+1)+"月"+date.getDate()+"日"+" "+date.getHours()+":"+date.getMinutes()+":"+date.getSeconds();
+		document.write("现在时间："+today+"<br/>");
+
+		document.write("<hr>");	//分隔
+
+		var day=date.getDay();
+		var week;
+		switch(day){
+			case 0: week="星期日";break;
+			case 1: week="星期一";break;
+			case 2: week="星期二";break;
+			case 3: week="星期三";break;
+			case 4: week="星期四";break;
+			case 5: week="星期五";break;
+			case 6: week="星期六";break;
+		}
+		document.write(week+"<br/>");
+		var today=date.getFullYear()+"年"+(date.getMonth()+1)+"月"+date.getDate()+"日"+" "+week+" "+date.getHours()+":"+date.getMinutes()+":"+date.getSeconds()+" ";
+		document.write("现在时间："+today+"<br/>");
+	</script>
+</body>
+</html>

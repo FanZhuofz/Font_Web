@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <canvas id="canvas" style="border: 1px solid red" width="800" height="800"></canvas>
+    <script>
+        var canvas = document.querySelector('#canvas');
+        var cxt = canvas.getContext('2d');
+        cxt.lineWidth = 5;
+
+        cxt.save();
+        cxt.scale(1,1);
+        cxt.strokeRect(0,0,200,200);
+        cxt.restore();
+
+        cxt.save();
+        cxt.scale(2,2);
+        cxt.strokeRect(0,0,200,200);
+        cxt.restore();
+
+        cxt.save();
+        cxt.scale(3,3);
+        cxt.strokeRect(0,0,200,200);
+        cxt.restore();
+
+
+
+    </script>
+</body>
+</html>

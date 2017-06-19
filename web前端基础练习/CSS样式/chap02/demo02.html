@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>图片</title>
+	<style type="text/css">
+		.i1 {
+			margin-left: 20px;
+			border: 5px solid red;	/*实线*/
+		}
+
+		.i2 {
+			margin-left: 20px;
+			border: 5px dashed red;	/*虚线*/
+		}
+
+		.i3 {
+			margin-left: 20px;
+			border: 5px dotted red;	/*点划线*/
+		}
+
+		.i4 {
+			margin-left: 20px;
+			border-top: 5px solid red;	/*实线*/
+			border-right: 5px dotted blue;	/*点划线*/
+			border-left: 5px dashed green;	/*虚线*/
+			border-bottom: 5px solid yellow;	/*虚线*/
+		}
+
+		.i5:hover {
+			/*scaleX(x) 横向放大X倍 scaleY(y) 纵向放大y倍  x，y如果是负值，图片将旋转*/
+			transform: rotate(0deg) scaleX(1.3) scaleY(1.2);
+		}
+
+		.i6:hover {
+			/*scale(-x) 图片将旋转180度*/
+			transform: rotate(0deg) scale(-1.2);
+		} 
+
+		.i7:hover {
+			/*scale(0.x)缩小X倍*/
+			transform: rotate(0deg) scale(0.5);
+		}
+
+		p {
+			border: 1px solid red;
+		}
+	</style>
+</head>
+<body>
+	<hr/>
+	<h1>图片边框</h1>
+	<img src="./dawnlogo.jpg" class="i1" />
+	<img src="./dawnlogo.jpg" class="i2" />
+	<img src="./dawnlogo.jpg" class="i3" />
+	<img src="./dawnlogo.jpg" class="i4" />
+	<hr/>
+	<h1>图片大小及缩放</h1>
+	<img src="./dawnlogo.jpg" class="i5" style="margin-left: 20px;border: 5px dotted red;" />
+	<img src="./dawnlogo.jpg" class="i6" style="margin-left: 20px;border: 5px dotted red;" />
+	<img src="./dawnlogo.jpg" class="i7" style="margin-left: 20px;border: 5px dotted red;" />
+	<hr/>
+	<h1>图片与文字对其方式</h1>
+	<p>竖直对齐：<img src="./dawnlogo.jpg" style="vertical-align: baseline;" />方式：<img src="./1864.jpg" style="vertical-align: baseline;" />baseline</p>
+
+	<p>顶部对齐：<img src="./dawnlogo.jpg" style="vertical-align: top;" />方式：<img src="./1864.jpg" style="vertical-align: top;" />top</p>
+
+	<p>居中对齐：<img src="./dawnlogo.jpg" style="vertical-align: middle;" />方式：<img src="./1864.jpg" style="vertical-align: middle;" />middle</p>
+
+	<p>底部对齐：<img src="./dawnlogo.jpg" style="vertical-align: text-bottom;" />方式：<img src="./1864.jpg" style="vertical-align: text-bottom;" />text-bottom</p>
+
+	<p>顶部对齐：<img src="./dawnlogo.jpg" style="vertical-align: text-top;" />方式：<img src="./1864.jpg" style="vertical-align: text-top;" />text-top</p>
+
+	<p>sub对齐：<img src="./dawnlogo.jpg" style="vertical-align: sub;" />方式：<img src="./1864.jpg" style="vertical-align: sub;" />sub</p>
+
+	<p>super对齐：<img src="./dawnlogo.jpg" style="vertical-align: super;" />方式：<img src="./1864.jpg" style="vertical-align: super;" />super</p>
+</body>
+</html>

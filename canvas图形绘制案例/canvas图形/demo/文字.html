@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--300*150-->
+    <canvas id="canvas" style="border: 1px solid red" width="800" height="800"></canvas>
+    <script>
+       var canvas =  document.querySelector("#canvas");
+        var cxt = canvas.getContext("2d");
+
+       cxt.fillStyle = "red";
+//       cxt.textAlign = "center";
+//       cxt.textBaseline = "middle"
+       cxt.font = "italic 80px 微软雅黑";
+        cxt.fillText("你好，canvas",100,100);
+       cxt.strokeStyle = "yellow";
+        cxt.strokeText("你好，canvas",100,200);
+
+    </script>
+</body>
+</html>

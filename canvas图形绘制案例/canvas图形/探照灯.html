@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #cccccc;
+            padding-top: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="400" height="400"></canvas>
+<script>
+    var canvas = document.querySelector('#canvas');
+
+    // 取得canvas 2D绘图环境（上下文）
+    var context = canvas.getContext('2d');
+
+    //填充样式，默认是黑色
+    context.fillStyle = 'black';
+    context.fillRect(0, 0, canvas.width, canvas.height);
+
+    //画个图
+    context.arc(canvas.width / 2, canvas.height / 2, 50, 0, Math.PI * 2, true);
+    //裁切（类似PS的剪切蒙板）
+    context.clip();
+
+    //
+    context.fillStyle = 'white';
+    context.fillRect(0, 0, canvas.width, canvas.height);
+
+    //字体
+    context.fillStyle = 'black';
+    context.font = '20px 微软雅黑';
+    //水平对齐方式
+    context.textAlign = 'center';
+    //垂直对齐方式
+    context.textBaseline = 'middle';
+    //写入文字到canvas中心点
+    context.fillText('你好，Canvas！', canvas.width / 2, canvas.height / 2);
+
+
+</script>
+</body>
+</html>

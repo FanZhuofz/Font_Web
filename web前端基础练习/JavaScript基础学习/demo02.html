@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JavaScript函数</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		/*方法*/
+		function fun1(){	//无参
+			alert("这是我的一个方法！");
+		}
+
+		function fun2(param1){	//带一个参
+			alert(param1);
+		}
+
+		function fun3(param1,param2){	//带两个参
+			alert(param1+" "+param2);
+		}
+
+		function fun4(param1,param2){	//带两个参的返回值方法
+			return param1+" "+param2;
+		}
+
+		/*调用*/
+		//	fun1();
+		//	fun2("fuck");
+		//	fun3("fuck","you");
+		/*
+		 var result = fun4("fuck","you");
+		 alert(result);
+		*/
+
+
+		/*循环*/
+		//break循环，当i==5时退出循环，i==5之后都不执行
+		document.write("break;<br/>");
+		for(var i=0;i<10;i++){
+			if(i==5){
+				break;
+			}
+			document.write("i="+i+"<br/>");
+		}
+		document.write("<hr/>");
+
+		//continue循环，当j==5时继续往下执行循环，不执行j==5
+		document.write("continue;<br/>");
+		for (var j=0;j<10;j++) {
+			if(j==5){
+				continue;
+			}
+			document.write("j="+j+"<br/>");
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+@charset "utf-8";
+/*框架预览 CSS*/
+.mkeBody{ background:#121212;}
+.mkeHeadBox{ padding: 30px 10px; text-overflow: ellipsis; white-space: nowrap; margin: 0; color: #fff; text-align: center; overflow: hidden; border-bottom: 3px solid #666; box-shadow: inset 0 -2px 3px #000000; letter-spacing: 1px; font: 26px/26px "微软雅黑"; }
+.mkeFooterBox{ padding: 25px 10px; text-overflow: ellipsis; margin: 0; color: #fff; font-size: 14px; line-height: 24px; text-align: center; overflow: hidden; border-top: 3px solid #666; box-shadow: inset 0 2px 3px #000000; }
+.mkeContentBox{background-color: #f7f4e4; padding:50px 0 50px 0}
+.mkeContentBox:after{height:0; clear:both;}
+.mkeFooterBox p,.mkeFooterBox div{padding:0; margin:0; line-height:26px; font-size:14px;}
+.mkeFooterBox a{color:#fff; white-space:nowrap}
+.mkeButton{background:#F36; display:inline-block; text-decoration:none; width:102px; border-radius:0.3em; transition:all 0.3s ease}
+.mkeButton:hover{ background: #FF1550; }
+.mkeURL{font-size:24px;}
+.mkeFooterBox .mKeBannerAD{ width: 728px; height: 90px; margin: 18px auto 0; }
+.mkeFooterBox .mSmallKeBannerAD{display:none;}
+@media only screen and (max-width:900px){
+.mkeButton {display:block; margin:8px auto 0;}
+}
+@media only screen and (max-width:767px){
+.mkeHeadBox{font-size:18px; padding:15px 10px;}
+.mkeFooterBox p,.mkeFooterBox div{ line-height:24px; font-size:12px;}
+.mkeURL{font-size:22px;}
+.mkeFooterBox .mKeBannerAD{display:none;}
+.mkeFooterBox .mSmallKeBannerAD{width:300px; height:250px; margin:18px auto 0; display:block;}
+}
+/*End*/
+
+/*主要CSS*/
+figure {
+  width: 30%;
+  margin: 0 auto;
+  max-width: 80vh;
+}
+figure #sea {
+  fill: #9bc4eb;
+}
+figure #hi {
+  fill: rgba(255, 255, 255, 0.2);
+}
+figure #light {
+  fill: white;
+}
+figure #shad {
+  fill: rgba(0, 0, 0, 0.05);
+}
+figure #land {
+  fill: #8b9c52;
+  -webkit-animation: spin 10s linear infinite forwards;
+          animation: spin 10s linear infinite forwards;
+}
+figure .vehicles use {
+  fill: #f0fbfc;
+  -webkit-animation: orbit 15s linear infinite;
+          animation: orbit 15s linear infinite;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+figure #boat1 {
+  -webkit-transform: translateX(40px) translateY(-80px);
+          transform: translateX(40px) translateY(-80px);
+}
+figure #boat1 use {
+  -webkit-animation-duration: 30s;
+          animation-duration: 30s;
+}
+figure #plane1 {
+  -webkit-transform: translateX(-10px) translateY(170px);
+          transform: translateX(-10px) translateY(170px);
+}
+figure #plane2 {
+  -webkit-transform: translateX(170px) translateY(150px);
+          transform: translateX(170px) translateY(150px);
+}
+figure #plane2 use {
+  -webkit-animation-delay: 7.5s;
+          animation-delay: 7.5s;
+}
+figure #plane3 {
+  -webkit-transform: translateX(140px) translateY(-50px);
+          transform: translateX(140px) translateY(-50px);
+}
+figure #plane3 use {
+  -webkit-animation-delay: 1.25s;
+          animation-delay: 1.25s;
+  -webkit-animation-duration: 12s;
+          animation-duration: 12s;
+}
+figure #bike1 {
+  -webkit-transform: translateX(50px) translateY(190px);
+          transform: translateX(50px) translateY(190px);
+}
+figure #bike1 use {
+  -webkit-animation-duration: 25s;
+          animation-duration: 25s;
+}
+@-webkit-keyframes orbit {
+  from {
+    -webkit-transform: rotate(0deg) translateX(-160px);
+            transform: rotate(0deg) translateX(-160px);
+  }
+  to {
+    -webkit-transform: rotate(360deg) translateX(-160px);
+            transform: rotate(360deg) translateX(-160px);
+  }
+}
+@keyframes orbit {
+  from {
+    -webkit-transform: rotate(0deg) translateX(-160px);
+            transform: rotate(0deg) translateX(-160px);
+  }
+  to {
+    -webkit-transform: rotate(360deg) translateX(-160px);
+            transform: rotate(360deg) translateX(-160px);
+  }
+}
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: translateX(-300px);
+            transform: translateX(-300px);
+  }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+@keyframes spin {
+  from {
+    -webkit-transform: translateX(-300px);
+            transform: translateX(-300px);
+  }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}

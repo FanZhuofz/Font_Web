@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>设置英文字母大小写转换</title>
+	<style type="text/css">
+		.p1 {
+			text-transform: capitalize;		/*首字母大写*/
+		}
+
+		.p2 {
+			text-transform: uppercase;	/*变大写*/
+		}
+
+		.p3 {
+			text-transform: lowercase;	/*变小写*/
+		}
+
+		.p4 {
+			text-indent: 2em;	/*首行缩进两个字符*/
+			line-height: 2.0;
+		}
+
+		.greenBorder {border: 1px solid green;} /*设置段落的垂直对齐方式*/
+
+		[class*="span"] {
+			float: left;
+			min-height: 1px;
+			margin-left: 20px;
+		}
+
+		.marg {
+			margin-left: 30px;
+			border: 2px solid red; 
+		}
+
+		.musi {
+			border: 1px dotted red;
+			background-color: green;
+		}
+	</style>
+</head>
+<body>
+	<hr>
+	<h1>设置英文字母大小写转换</h1>
+	<p>study Hard And Make Progress Every Day.	<span style="color:red">__不变</span></p>
+	<p class="p1">study hard and Make Progress Every Day. <span style="color:red">__首字母变大写</span></p>
+	<p class="p2">study Hard And Make Progress Every Day. <span style="color:red">__全部变大写</span></p>
+	<p class="p3">study Hard And Make Progress Every Day. <span style="color:red">__全部变小写</span></p>
+	<hr>
+
+	<h1>首行缩进</h1>
+	<p class="p4">三月，醉一场青春的流年。慢步在三月的春光里，走走停停，看花开嫣然，看春雨绵绵，感受春风拂面，春天，就是青春的流年。青春，是人生中最美的风景。青春，是一场花开的遇见；青春，是一场痛并快乐着的旅行；青春，是一场轰轰烈烈的比赛；青春，是一场鲜衣奴马的争荣岁月；青春，是一场风花雪月的光阴。</p>
+ 
+　　<p class="p4">青春往事，多么甜蜜；青春岁月，多么靓丽；青春流年，如火如荼。青春里，我们向着梦想前进。跌倒过，伤心过，快乐过，痛苦过，孤独过，彷徨过，迷茫过。总是，在悠悠的岁月中徘徊；总是，在如春的生命中成长；总是，在季节的交替中感悟人生四季的美妙与韵律；总是，在多愁善感中体悟青春的美好与无奈。</p>
+	<hr>
+
+	<h1>设置段落的垂直对齐方式</h1>
+	<div class="greenBorder" style="display: table; height: 300px; width: 800px; #position: relative; overflow: hidden;">
+    	<div style=" _position: absolute; #top: 50%;display: table-cell; vertical-align: middle;">
+	      <div class="greenBorder" style=" #position: relative; #top: -50%">
+	        你好，我是第一段<br>
+	        Hello！I'm第二段，I'm fun！<br>
+	        啦啦啦啦，我是第三段，哈哈。<br>
+	        嘿嘿，我是最后一段，也是第四段。
+	      </div>
+    	</div>
+    	<h1>菜单</h1>
+    	<ul>
+    		<li>
+    			<h2>menu1</h2>
+    			<ul>
+    				<li>
+    					<h3>menu2</h3>
+    					<ul>
+    						<li>abc</li>
+    						<li>def</li>
+    						<li>ghi</li>
+    					</ul>
+    				</li>
+    				<li><h3>ABC</h3></li>
+    				<li><h3>DEF</h3></li>
+    				<li><h3>GHI</h3></li>
+    			</ul>
+    		</li>
+    		<li><h2>123</h2></li>
+    		<li><h2>456</h2></li>
+    		<li><h2>789</h2></li>
+    	</ul>
+  	</div>
+  	<hr>
+  	<h3>音乐欣赏</h3>
+	<!--设置手动播放音乐+面板-->
+	<audio controls="controls" class="musi">
+		<source src="D:\KwDownload\song\马天宇-落花{电视剧 《少年神探狄仁杰》主题曲}.mp3" type="audio/mpeg" />
+	</audio>
+
+	<!--设置自动播放音乐（背景音乐）
+	<audio src="D:\KwDownload\song\李玉刚-刚好遇见你.mp3" autoplay></audio>
+	-->
+
+	<h3>影片欣赏--- welcome、春暖花开、花开剪影</h3>
+	<video src="E:\视频\welcome.mp4" controls="controls" width=300 height=200 class="marg" />
+	</video>
+
+	<!-- <h3>影片欣赏 春暖花开</h3> -->
+	<video src="E:\视频\春暖花开.mp4" controls="controls" width=300 height=200 class="marg"/>
+	</video>
+
+
+	<!-- <h3>影片欣赏 花开剪影</h3> -->
+	<video src="E:\视频\花开剪影.mp4" controls="controls" width=300 height=200 class="marg"/>
+	</video>
+	<hr>
+
+
+</body>
+</html>

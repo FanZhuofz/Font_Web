@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <canvas id="canvas" style="border: 1px solid red" width="600" height="600"></canvas>
+    <script>
+        var canvas = document.querySelector('#canvas');
+
+        var cxt = canvas.getContext('2d');
+        cxt.beginPath();
+        cxt.moveTo(200,100);
+        cxt.lineTo(100,400);
+        cxt.lineTo(400,400);
+//        cxt.lineTo(200,100); //可以省略
+        cxt.closePath();
+
+        cxt.fillStyle = "pink";
+        cxt.fill();
+        cxt.strokeStyle ="red";
+        cxt.stroke();
+
+
+        cxt.beginPath(); //开始一条路径   可以把moveTo改成lineTo
+        cxt.moveTo(300,100);
+        cxt.lineTo(500,100);
+        cxt.lineTo(500,400);
+//        cxt.lineTo(300,100);
+        cxt.closePath();           //闭合路径 可以省略掉最后一条lineTo
+
+        cxt.fillStyle = "yellow";
+        cxt.fill();
+        cxt.strokeStyle ="red";
+        cxt.stroke();
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>canvas吃小球效果</title>
+<style>
+*{margin:0;padding:0}
+
+</style>
+</head>
+
+<body>
+
+<canvas id="myCanvas" width="800" height="500" style="border:1px solid #c3c3c3;"></canvas>
+
+<script type="text/javascript">
+var canvas=document.getElementById('myCanvas');
+
+var c=document.getElementById("myCanvas");
+var cxt=c.getContext("2d");
+var start1=60,radius1=50,size=3,start2=250,radius2=20;
+
+fn();
+function fn()
+{
+cxt.clearRect(0,0,canvas.width,canvas.height);
+
+cxt.fillStyle="#FF0000";
+cxt.beginPath(); //起始一条路径，或重置当前路径
+cxt.arc(start1,200,radius1,Math.PI*0.2,Math.PI*1.8,false);//创建弧/曲线（用于创建圆形或部分圆）
+cxt.lineTo(start1,200);
+cxt.closePath();//创建从当前点回到起始点的路径
+cxt.fill();//填充当前绘图（路径）
+for(var i=0;i<size;i++)
+{
+getCircle(start2+i*200,200,radius2,0,'blue')
+};
+
+function getCircle(x,y,r,s,color){
+cxt.fillStyle=color;
+cxt.beginPath()
+cxt.arc(x,y,r,s,Math.PI*2);
+cxt.fill();	
+};	
+start1+=10;
+if(start1+radius1>start2+10)
+{
+size--;
+start2+=200;
+setTimeout(function(){
+
+cxt.clearRect(0,0,canvas.width,canvas.height);
+
+cxt.fillStyle='red';
+cxt.beginPath();
+cxt.arc(start1,200,radius1,0,Math.PI*2);
+cxt.closePath();
+cxt.fill();
+
+for(var i=0;i<size;i++)
+{
+getCircle(start2+i*200,200,radius2,0,'blue')
+};	
+
+start1+=10;
+
+if(size>0)
+{
+setTimeout(fn,30)	
+}else
+{
+var type = 'jpg';
+var imgData = canvas.toDataURL(type);
+document.body.innerHTML=imgData;
+var oImg=document.createElement('img');
+oImg.src=imgData;
+document.body.appendChild(oImg);
+};
+},100);
+}
+else
+{
+setTimeout(fn,30);
+};
+
+};
+
+ 
+
+</script>
+</body>
+</html>

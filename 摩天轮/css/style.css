@@ -1,0 +1,83 @@
+div{
+    border: 0px solid red;
+	margin: 100px auto;
+	width:800px;
+	animation: lun_run 1000s;
+	}
+	#boy{
+      position:absolute;
+	  left:400px;
+	  top:30p;
+	  animation: p_run 1000s;
+	}
+	#girl{
+	  left:300px;
+	  top:660px;
+      position:absolute;
+	  animation:p_run 1000s;
+	  
+	}
+	#girl2{
+	 left:600px;
+	  top:45px;
+      position:absolute;
+	  animation: p_run 1000s;
+	 
+	}
+	@keyframes lun_run{
+	   from{
+	     transform:rotate(0deg);
+	   }
+	   to{
+          transform:rotate(36000deg);
+	   }
+	}
+	@keyframes p_run{
+	   from{
+	     transform:rotate(0deg);
+	   }
+	   to{
+          transform:rotate(-36000deg);
+	   }
+	}div{
+    border: 0px solid red;
+	margin: 100px auto;
+	width:800px;
+	animation: lun_run 1000s;
+	}
+	#boy{
+      position:absolute;
+	  left:400px;
+	  top:30p;
+	  animation: p_run 1000s;
+	}
+	#girl{
+	  left:300px;
+	  top:660px;
+      position:absolute;
+	  animation:p_run 1000s;
+	  
+	}
+	#girl2{
+	 left:600px;
+	  top:45px;
+      position:absolute;
+	  animation: p_run 1000s;
+	 
+	}
+	@keyframes lun_run{
+	   from{
+	     transform:rotate(0deg);
+	   }
+	   to{
+          transform:rotate(36000deg);
+	   }
+	}
+	@keyframes p_run{
+	   from{
+	     transform:rotate(0deg);
+	   }
+	   to{
+          transform:rotate(-36000deg);
+	   }
+	}

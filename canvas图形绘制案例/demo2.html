@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>图形组合例</title>
+  <style type="text/css">
+  		#btn {
+  			margin:0 auto;
+  			width:1200px;
+  			clear:both;
+  		}
+  		#btn a {
+  			font-size: 14px;
+  			float: left;
+  			margin-right: 20px; 
+  		}
+  </style>
+ </head>
+
+ <body>
+ 	
+ 	<div id="btn">
+	 	<a href="#">source-over</a>
+	 	<a href="#">source-atop</a>
+	 	<a href="#">source-in</a>
+	 	<a href="#">source-out</a>
+	 	<a href="#">destination-over</a>
+	 	<a href="#">destination-atop</a>
+	 	<a href="#">destination-in</a>
+	 	<a href="#">destination-out</a>
+	 	<a href="#">lighter</a>
+	 	<a href="#">copy</a>
+	 	<a href="#">xor</a>
+ 	</div>
+ 	
+ 	<canvas id="canvas" style="..." width="1200" height="800"></canvas>
+ 	<hr>
+ 	<div>
+ 		<img src="./img/demo2-1.png">
+ 		<img src="./img/demo2-2.png">
+ 	</div>
+	 <script type="text/javascript">
+	 		window.onload = function(){
+	 			draw("source-over");
+	 			var btns = document.getElementById("btn").getElementsByTagName('a');
+	 			for(var i = 0;i<btns.length;i++){
+	 				btns[i].onclick  = function () {
+	 					draw(this.text);
+	 					return false;
+	 				}
+	 			}
+	 		}
+
+	 		function draw(compositestyle){
+	 			//获得画布  对象
+			 	var canvas = document.getElementById('canvas');
+			 	var cxt  = canvas.getContext('2d');
+
+			 	cxt.clearRect(0,0,canvas.width,canvas.height);
+
+			 	cxt.font = "bold 40px Aprial";
+			 	cxt.textAlign = "center";
+			 	cxt.textBaseline = "middle";
+			 	cxt.fillStyle = "#058";
+			 	cxt.fillText("globalCompositeOperation = " + compositestyle , canvas.width/2 , 60);
+
+			 	cxt.beginPath();
+			 	cxt.fillStyle = "blue";
+			 	cxt.fillRect(300,150,500,500);
+			 	cxt.closePath();
+
+			 	cxt.globalCompositeOperation = compositestyle;
+
+			 	cxt.beginPath();
+			 	cxt.moveTo(700,250);
+			 	cxt.lineTo(1000,750);
+			 	cxt.lineTo(400,750);
+			 	cxt.closePath();
+			 	cxt.fillStyle = "red";
+			 	cxt.fill();
+	 		}
+	 </script>
+  </body>
+</html>

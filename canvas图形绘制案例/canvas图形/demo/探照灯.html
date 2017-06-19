@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--300*150-->
+    <canvas id="canvas" style="border: 1px solid red" width="800" height="800"></canvas>
+    <script>
+       var canvas =  document.querySelector("#canvas");
+        var cxt = canvas.getContext("2d");
+
+       function draw(x,y){
+           //黑布
+           cxt.fillStyle = "#000";
+           cxt.fillRect(0,0,canvas.width,canvas.height);
+
+           //洞
+           cxt.beginPath();
+           cxt.arc(x,y,100,0,Math.PI*2);
+           cxt.closePath();
+           cxt.fillStyle ="#fff";
+           cxt.fill();
+           cxt.save();
+           cxt.clip();
+
+           //画
+           cxt.fillStyle = "red";
+//       cxt.textAlign = "center";
+//       cxt.textBaseline = "middle"
+           cxt.font = "italic 80px 微软雅黑";
+           cxt.fillText("你好，canvas",100,100);
+           cxt.strokeStyle = "yellow";
+           cxt.strokeText("你好，canvas",100,200);
+           cxt.restore();
+       }
+        draw(canvas.width/2,canvas.height/2);
+
+        canvas.addEventListener("mousemove",function(event){
+           var offsetX= event.offsetX;
+           var offsetY= event.offsetY;
+            draw(offsetX,offsetY);
+        },false)
+
+    </script>
+</body>
+</html>

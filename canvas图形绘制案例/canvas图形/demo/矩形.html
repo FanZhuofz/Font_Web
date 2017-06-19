@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--300*150-->
+    <canvas id="canvas" style="border: 1px solid red" width="800" height="800"></canvas>
+    <script>
+       var canvas =  document.querySelector("#canvas");
+        var cxt = canvas.getContext("2d");
+
+//        cxt.rect(100,100,200,150);
+//        cxt.stroke();
+//        cxt.fillStyle = "rgba(255,0,0,0.2)";
+//        cxt.fill();
+        cxt.fillRect(100,100,200,150);
+
+        cxt.strokeRect(100,300,200,150);
+
+    </script>
+</body>
+</html>

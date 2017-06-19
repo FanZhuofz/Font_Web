@@ -1,0 +1,56 @@
+﻿<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>阴影效果</title>
+ </head>
+
+ <body>
+	 <div align="center">
+	 	  <canvas id="canvas" width="400" height="600" style="border: 2px solid orange"></canvas>
+          &nbsp; 
+          <img src="./img/demo6-1.png" style="border: 6px solid #000">
+	</div>
+    <script type="text/javascript">
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+
+        //设置渐变
+        var g = context.createLinearGradient(0,0,200,0);
+        g.addColorStop(0,'red');
+        g.addColorStop(0.5,'green');
+        g.addColorStop(1,'blue');
+        context.strokeStyle = g;
+
+        //设置阴影；从上到下解析，放在此处三个图形都有阴影
+        context.shadowOffsetX = 20;
+        context.shadowOffsetY = 18;
+        context.shadowColor = "#636262";
+        context.shadowBlur = 12;
+
+        //绘制渐变线段
+        context.save();
+        context.moveTo(10,30);
+        context.lineTo(180,160);
+        context.lineWidth=5;
+        context.stroke();
+        context.restore();
+
+		//绘制渐变矩形
+        context.beginPath();
+        context.save();
+        context.fillStyle = g;
+        context.fillRect(0,200,200,100);
+        context.closePath();
+
+		//绘制渐变圆形
+        context.save();
+        context.fillStyle = g;
+        context.arc(100,450,100,0,Math.PI*2);
+        context.fill();
+        context.restore();
+        context.closePath();
+   
+    </script>
+ </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <title>images</title> 
+ <script type="text/javascript"> 
+  var curIndex = 0; 
+  var timeInterval = 1000; 
+  var arr = new Array(); 
+  arr[0] = "1.jpg"; 
+  arr[1] = "2.jpg"; 
+  arr[2] = "3.jpg"; 
+  arr[3] = "4.jpg"; 
+  arr[4] = "5.jpg"; 
+  arr[5] = "6.jpg"; 
+  arr[6] = "7.jpg"; 
+  setInterval(changeImg,timeInterval); 
+  function changeImg() { 
+   var obj = document.getElementById("obj"); 
+   if (curIndex == arr.length-1) { 
+    curIndex = 0; 
+   } else { 
+    curIndex += 1; 
+     } 
+   obj.src = arr[curIndex]; 
+  } 
+ </script> 
+
+ <!-- <script language="javascript"> 
+  setInterval(test,1000); 
+  var array = new Array(); 
+  var index = 0; 
+  var array = new Array("image/1.jpg","image/2.jpg","image/3.jpg","image/4.jpg","image/5.jpg","image/6.jpg","image/7.jpg","image/8.jpg","image/9.jpg","image/10.jpg"); 
+  function test() { 
+   var myimg=document.getElementById("imgs"); 
+   if(index==array.length-1) 
+   { index=0; }else{ index++; } 
+   myimg.src=array[index]; 
+  } 
+ </script> -->
+ </head> 
+ <body> 
+  <img id = "obj" src = "1.jpg" border = 0 /> 
+ </body> 
+</html> 

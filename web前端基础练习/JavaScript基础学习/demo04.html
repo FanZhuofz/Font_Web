@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JavaScript对象</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		/*
+
+		function speak(something){
+			alert(something);
+		}
+
+		var p = new Object();	//new一个对象
+		p.name = "Jack";	//动态的添加属性
+		p.func=speak;	//动态的添加方法
+		alert(p.name);
+		p.func("Hello,Hello,大家好！");
+
+		*/
+
+		//删除p.name和p.func
+		/*
+		delete p.name;
+		alert(p.name);
+		delete p.func;
+		p.func("Hello,Hello,大家好！");
+
+		//执行完后报错无p.name和p.func
+
+		*/
+
+
+		/*
+		p.name=undefined;
+		p.func=undefined;
+		alert(p.name);
+		p.func("Hello,Hello,大家好！");
+
+		//执行完后报错无p.name和p.func
+
+		*/
+
+		function person(name,age){
+			this.name1=name;
+			this.age1=age;
+
+			function speak(something){
+				alert(something);
+			}
+
+			this.func=speak;
+		}
+
+		var p1=new person("Jack",12);
+		alert(p1.name1);
+		p1.func("Hello,EveryOne!");
+	</script>
+</body>
+</html>

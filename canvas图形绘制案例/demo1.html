@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>渐变例子</title>
+ </head>
+
+ <!--
+ .绘制线性渐变
+ 	LinearGradient对象
+ 	createLinearGradient(xStart,yStart,xEnd,yEnd)
+	 	xStart,yStart		渐变开始的X,Y坐标
+	 	xEnd,yEnd			渐变结束的X,Y坐标
+ .设置颜色渐变
+ 	addColorStop(offset,color)
+ 	offset		颜色离渐变起始点的偏移量(0~1)
+ 	color 		绘制时使用的颜色
+ 	
+ 使用Cancas绘制图形（二）绘制渐变图形
+	 a.绘制图形
+	 	 1、绘制渐变图形；2、图形组合；3、绘制阴影；4、绘制图像
+	 b.绘制文字
+ .绘制径向渐变
+  ReadialGradient对象
+  createRadialGradient(xStart,yStart,radiusStart,xEnd,yEnd,radiusEnd)
+    xStart,yStart,radiusStart   渐变开始圆心的X、Y坐标；渐变开始圆的半径
+    xEnd,yEnd,radiusEnd         渐变结束圆心的X、Y坐标；渐变结束圆的半径
+
+  图形组合
+  
+ -->
+
+ <body>
+ 	  <canvas id="canvas" width="500" height="500" style="border: 1px solid red"></canvas>
+
+    <script type="text/javascript">
+        var canvas = document.getElementById('canvas');
+        var cxt = canvas.getContext('2d');
+
+/*绘制直线  起始到结束渐变*/
+
+        var l = cxt.createLinearGradient(100,100,300,300);
+
+        l.addColorStop(0,'red');
+        l.addColorStop(0.7,'green');
+        l.addColorStop(1,'blue');
+
+        cxt.lineWidth = 10;
+        cxt.beginPath();
+        cxt.moveTo(100,100);
+        cxt.lineTo(300,300);
+        cxt.closePath();
+        cxt.strokeStyle = l;
+        cxt.stroke();
+
+/*绘制矩形  从上到下渐变*/
+
+        var l1 = cxt.createLinearGradient(250,100,250,200);
+
+        l1.addColorStop(0,'red');
+        l1.addColorStop(0.5,'green');
+        l1.addColorStop(1,'yellow');
+
+        cxt.lineWidth = 10;
+        cxt.fillStyle = l1;
+        cxt.beginPath();
+        cxt.fillRect(200,100,100,100);
+        cxt.closePath();
+
+/*绘制圆形  从圆心出发放射状渐变*/
+
+        var l2 = cxt.createRadialGradient(100,300,30,100,300,100);
+
+        l2.addColorStop(0,'red');
+        l2.addColorStop(0.5,'green');
+        l2.addColorStop(1,'yellow');
+
+        cxt.lineWidth = 10;
+        cxt.fillStyle = l2;
+        cxt.beginPath();
+        cxt.arc(100,300,100,0,2*Math.PI);
+        cxt.closePath();
+        cxt.fill();
+    </script>
+ </body>
+</html>

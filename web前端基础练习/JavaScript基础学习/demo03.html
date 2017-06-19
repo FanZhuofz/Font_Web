@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JavaScript操作DOM节点</title>
+	<script type="text/javascript">
+
+	//修改DOM节点
+		function modifyDOM(){
+			document.getElementById("txt").innerHTML="用户名：";
+			document.getElementById("userName").value="Jack";
+		}
+	//添加DOM节点
+		function addDOM(){
+			//创建节点
+			var para=document.createElement("p");
+			var node=document.createTextNode("...前...");
+
+			var para2=document.createElement("p");
+			var node2=document.createTextNode("...后...");
+			//p里面加内容，文本节点添加到p元素里面
+			para.appendChild(node);
+			para2.appendChild(node2);
+			//在son1前面插，默认直接插入后面
+			var parent=document.getElementById("parent");
+			var son1=document.getElementById("son1");
+			parent.insertBefore(para, son1);
+
+			//插入到son1后面，直接在后面追加
+			parent.appendChild(para2);
+		}
+	//删除DOM节点
+		function removeDOM(){
+			//获取父DOM对象
+			var parent=document.getElementById("parent");
+			var son1=document.getElementById("son1");
+			//移除son1节点
+			parent.removeChild(son1);
+		}
+
+	//修改DOM节点样式
+	function modifyDOMCSS(){
+		document.getElementById("gril").style.color="red";
+	}
+	</script>
+</head>
+<body>
+	<div id="parent">
+		<div id="son1">
+			<font id="txt">：</font><input type="text" id="userName" name="userName" />
+		</div>
+	</div>
+	<p id="gril">女程序员（点击“修改DOM节点样式”按钮,文字变红）</p>
+	<input type="button" value="修改DOM节点" onclick="modifyDOM()" />
+	<input type="button" value="添加DOM节点" onclick="addDOM()" />
+	<input type="button" value="删除DOM节点" onclick="removeDOM()" />
+	<input type="button" value="修改DOM节点样式" onclick="modifyDOMCSS()" />
+</body>
+</html>
